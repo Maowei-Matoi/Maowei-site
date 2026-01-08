@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maowei // PROTOCOL ENGAGED</title>
+    <style>
+        :root {
+            --valorant-red: #ff4655; /* 瓦罗兰特标志性红色 */
+            --valorant-black: #1a2128; /* 深色背景 */
+            --valorant-grey: #2e3b44; /* 中度灰色 */
+            --valorant-white: #ece8e1; /* 接近白色 */
+            --valorant-light-grey: #a1a1a1; /* 用于辅助文字 */
+        }
+
+        body {
+            background-color: var(--valorant-black);
+            font-family: 'Inter', 'Segoe UI', Arial, sans-serif; /* 现代无衬线字体 */
+            margin: 0;
+            padding: 0;
+            color: var(--valorant-white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh; /* 至少撑满一个屏幕高 */
+            padding-bottom: 50px; /* 底部留白 */
+        }
+
+        .container {
+            max-width: 960px;
+            width: 100%;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Header - 带有瓦罗兰特 logo 风格的斜线 */
+        header {
+            background: var(--valorant-grey);
+            padding: 40px 60px;
+            position: relative;
+            margin-bottom: 30px;
+            overflow: hidden; /* 防止伪元素溢出 */
+            box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+            border-bottom: 5px solid var(--valorant-red);
+        }
+        
+        /* 瓦罗兰特风格的右下角斜线装饰 */
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -50%; /* 调整位置 */
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: rgba(var(--valorant-red), 0.1); /* 半透明红色 */
+            transform: skewX(-30deg); /* 斜切效果 */
+            z-index: 0;
+        }
+
+        header h2 {
+            font-size: 3.5rem;
+            margin: 0;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 900;
+            color: var(--valorant-white);
+            position: relative; /* 确保在伪元素之上 */
+            z-index: 1;
+        }
+
+        header h3 {
+            color: var(--valorant-red);
+            margin-top: 10px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            position: relative; /* 确保在伪元素之上 */
+            z-index: 1;
+        }
+
+        /* About Section - 简洁的模块 */
+        .about-section {
+            background: var(--valorant-grey);
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border-left: 3px solid var(--valorant-red);
+        }
+        
+        .about-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--valorant-white);
+        }
+
+        /* Section Title - 瓦罗兰特风格的标签 */
+        .section-title {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--valorant-red);
+            margin-bottom: 25px;
+            padding-left: 15px;
+            border-left: 5px solid var(--valorant-red);
+            letter-spacing: 1px;
+        }
+
+        /* Portfolio Grid - 战术卡片 */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: var(--valorant-grey);
+            padding: 25px;
+            border: 1px solid var(--valorant-red); /* 突出边框 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 项目卡片的红色装饰条 */
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--valorant-red);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+
+        .project-card h4 {
+            color: var(--valorant-white);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project-card p {
+            font-size: 0.95rem;
+            color: var(--valorant-light-grey);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: var(--valorant-light-grey);
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h2>MAOWEI // SITE</h2>
+            <h3>TACTICAL DEPLOYMENT IN PROGRESS</h3>
+        </header>
+
+        <div class="about-section">
+            <p>// 代理人档案：Maowei。精通前端部署与战术代码优化。致力于突破传统界限，创造高效且引人入胜的数字体验。</p>
+            <p>// 任务：通过我的作品集，展示最新的技术突破和项目成就。</p>
+        </div>
+
+        <h2 class="section-title">// 战术作品</h2>
+        
+        <div class="portfolio-grid">
+            <div class="project-card">
+                <h4>Project_CodeName_A</h4>
+                <p>一个响应式设计平台，优化了移动端的用户体验，确保在任何屏幕尺寸下都能完美运行。</p>
+            </div>
+
+            <div class="project-card">
+                <h4>Project_CodeName_B</h4>
+                <p>利用最新 WebGL 技术实现的 3D 数据可视化工具，提供直观的战术分析界面。</p>
+            </div>
+
+            <div class="project-card">
+                <h4>Project_CodeName_C</h4>
+                <p>与瓦罗兰特 API 集成，显示玩家实时数据与战绩分析。</p>
+            </div>
+            
+            <div class="project-card">
+                <h4>Project_CodeName_D</h4>
+                <p>一个基于 React 的单页面应用，专注于组件化开发与性能优化。</p>
+            </div>
+        </div>
+
+        <footer>
+            MAOWEI // OVER AND OUT
+        </footer>
+    </div>
+
+</body>
+</html>
